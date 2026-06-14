@@ -1,0 +1,9 @@
+data/raw/
+data/processed/
+data/models/
+
+__pycache__/
+.ipynb_checkpoints/
+
+data/*.csv
+data/*.pkl
