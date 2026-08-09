@@ -74,24 +74,28 @@ amazon_recommendation_system/
     ├── load_database.py
     ├── run_sql_analysis.py
     └── recommendation_engine.py
+```
 
+---
 
-# Amazon Recommendation System — Summary
+## Pipeline
 
-**Pipeline:** CSV → Data Quality → EDA → (Recommendation Models + SQL Pipeline) → Evaluation → CLI
+CSV → Data Quality → EDA → (Recommendation Models + SQL Pipeline) → Evaluation → CLI
+
+---
 
 ## 1. Data Quality
 - 568,454 rows, 10 cols | 256,059 users | 74,258 products | avg rating 4.18
 - Missing: ProfileName (26), Summary (27) | 0 duplicates/invalid ratings/dates
 - 5,859 repeated user-product pairs (kept, not treated as errors)
 
-## 2. EDA
+## 2. Exploratory Data Analysis (EDA)
 - Notebook: `notebooks/analytics.ipynb` — covers distributions, activity, sparsity, trends
 
-## 2a. Rating Distribution
+### Rating Distribution
 - Strongly skewed positive: 63.88% 5-star, 78.07% are 4–5 star
 
-## User/Product Activity
+### User/Product Activity
 - Users: mean 2.22, median 1, max 448 reviews (highly skewed)
 - Products: mean 7.66, median 2, max 913 reviews (long-tail)
 
@@ -126,7 +130,8 @@ amazon_recommendation_system/
 - `python -m app.app` → enter Product ID → shows Popular / Collaborative / Content-Based results
 
 ## 10–11. Setup & Run
-```
+
+```bash
 git clone <repo> && cd amazon_recommendation_system
 python -m venv venv && source venv/bin/activate   # (Windows: venv\Scripts\activate)
 pip install -r requirements.txt
